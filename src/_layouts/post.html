@@ -3,49 +3,30 @@ layout: default
 ---
 <div class="container blog-post">
 
-    {% if page.hero_image %}
-    <div class="hero">
-        <img class="hero-image" src="{{ page.hero_image }}">
-        {% if page.hero_text %}
-        <div class="hero-text">
-            <h2>{{ page.hero_text }}</h2>
-        </div>
-        {% endif %}
+  {% if page.hero_image %}
+  <div class="hero">
+    <img class="hero-image" src="{{ page.hero_image }}">
+    {% if page.hero_text %}
+    <div class="hero-text">
+      <h2>{{ page.hero_text }}</h2>
     </div>
     {% endif %}
+  </div>
+  {% endif %}
 
-    <div class="row">
-        <div class="col-md-8">
-            <article class="panel">
-                <h1>{{ page.title | escape }}</h1>
-                {{ content }}
-            </article>
-        </div>
-        <div class="col-md-4">
-
-            {% if page.lat %}
-            <div class="panel">
-                <div class="panel-banner map" data-coords="{{ page.lat }},{{ page.lng }}">
-                    <a href="https://www.google.com/maps/place/{{ page.lat }},{{ page.lng }}" target="_blank">
-                        <img src="https://maps.googleapis.com/maps/api/staticmap?center={{ page.lat }},{{ page.lng }}&zoom={{ page.zoom }}&size=420x300&maptype=roadmap&markers=color:red|{{ page.lat }},{{ page.lng }}&key={{ site.map_key }}">
-                    </a>
-                </div>
-                <p>
-                    <span class="pull-left">{{ page.lat | gps: 'lat' }} {{ page.lng | gps: 'lng' }}</span>
-                    <a class="pull-right" href="https://maps.google.com/maps?f=d&hl=en&mra=ls&ie=UTF8&t=h&source=s_d&daddr={{ page.lat }},{{ page.lng }}"
-                        target="_blank">Directions</a>
-                </p>
-            </div>
-            {% endif %}
-
-            {% assign recentPosts = site.posts | where:'layout','post' | where_exp:'item','item.id != page.id' |
-            sort:'date'
-            |
-            reverse %}
-            {% for post in recentPosts limit:3 %}
-            {% include panel.html post=post type="sidebar" %}
-            {% endfor %}
-        </div>
+  <div class="row">
+    <div class="col-md-8">
+      <article class="panel">
+        <h1>{{ page.title | escape }}</h1>
+        {{ content }}
+      </article>
     </div>
+    <div class="col-md-4">
+      {% assign recentPosts = site.posts | where:'layout','post' | where_exp:'item','item.id != page.id' | sort:'date' | reverse %}
+      {% for post in recentPosts limit:3 %}
+      {% include panel.html post=post type="sidebar" %}
+      {% endfor %}
+    </div>
+  </div>
 
 </div>

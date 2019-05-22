@@ -1,0 +1,10 @@
+{
+  "liquid.format": false,
+  "liquid.beautify": {
+    "html": {
+      "indent_size": 2,
+      "force_attribute": false,
+      "preserve": 2
+    }
+  }
+}
