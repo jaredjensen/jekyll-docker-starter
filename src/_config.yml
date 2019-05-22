@@ -1,0 +1,33 @@
+title: UFO All The Things
+email: tinhat@ufo.com
+description: >-
+  UFOs are cool. I love UFOs.  UFOs make me happy.
+baseurl: ''
+url: http://ufo.com
+prod_url: http://ufo.com
+github_username: jaredjensen
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+permalink: /:categories/:title/
+
+kramdown:
+  parse_block_html: true
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - .gitignore
+  - .prettierrc.json
+  - README.md
+  - assets/site/scss
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - node_modules
+
+safe: false

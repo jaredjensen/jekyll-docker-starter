@@ -1,0 +1,20 @@
+﻿@import '../mixins.scss';
+
+.credit {
+  display: block;
+  position: relative;
+
+  > img {
+    display: block;
+  }
+
+  > span {
+    background: #000;
+    bottom: 0;
+    @include rem(font-size, 12 / 16);
+    font-style: italic;
+    padding: 1px 5px;
+    position: absolute;
+    right: 0;
+  }
+}

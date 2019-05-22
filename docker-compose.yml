@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  web:
+    container_name: jekyll-docker-starter
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: jekyll-docker-starter:latest
+    volumes:
+      - ./src/_site:/usr/share/nginx/html/
+      - ./src/assets/site:/usr/share/nginx/html/assets/site
+    ports:
+      - 8080:80

@@ -1,0 +1,42 @@
+﻿@import '../variables.scss';
+
+.panel {
+  background: $color-white;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 1px 0 #ebebeb;
+  margin-bottom: $grid-spacing-mobile;
+  overflow: hidden;
+  padding: $grid-spacing-mobile;
+
+  > .video-container {
+    max-width: none;
+  }
+}
+
+.panel-banner {
+  display: block;
+  left: -$grid-spacing-mobile;
+  max-width: none;
+  position: relative;
+  top: -$grid-spacing-mobile;
+  width: calc(100% + #{2 * $grid-spacing-mobile});
+
+  > img,
+  iframe {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (min-width: $breakpoint-mobile) {
+  .panel {
+    margin-bottom: $grid-spacing;
+    padding: $grid-spacing;
+  }
+
+  .panel-banner {
+    left: -$grid-spacing;
+    top: -$grid-spacing;
+    width: calc(100% + #{2 * $grid-spacing});
+  }
+}

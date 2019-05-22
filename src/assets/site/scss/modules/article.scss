@@ -1,0 +1,93 @@
+﻿@import '../mixins.scss';
+@import '../variables.scss';
+
+article {
+  ol,
+  ul {
+    margin-bottom: 1rem;
+    margin-left: 40px;
+
+    > li {
+      margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  a {
+    color: $color-link-hover;
+
+    &:visited,
+    &:hover {
+      color: $color-link-hover;
+    }
+
+    &:hover {
+      border-bottom: 1px dotted $color-link-hover;
+    }
+  }
+
+  > ol,
+  > ul,
+  > div,
+  > .table,
+  > .row,
+  > .video-container {
+    margin-bottom: #{$paragraph-spacing}rem !important;
+  }
+
+  table {
+    margin-bottom: #{$paragraph-spacing}rem;
+
+    tr {
+      border-bottom: 1px solid #ddd;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    th,
+    td {
+      padding: 0.2rem 0.5rem;
+    }
+  }
+}
+
+.article-gallery {
+  > img {
+    /*-moz-background-clip: padding;
+		-webkit-background-clip: padding;
+		background-clip: padding-box;
+		border: 1px solid $color-gallery-background;*/
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width: $breakpoint-mobile) {
+  .article-gallery {
+    &:after {
+      display: table;
+      clear: both;
+      content: ' ';
+    }
+
+    > a {
+      display: block;
+      float: left;
+      margin-bottom: 0;
+      width: percentage(1 / 3);
+
+      &:hover {
+        border: none;
+      }
+
+      > img {
+        display: block;
+      }
+    }
+  }
+}

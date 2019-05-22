@@ -1,0 +1,36 @@
+﻿@import '../mixins.scss';
+@import '../variables.scss';
+
+.post-archive {
+  > .post-item {
+    display: block;
+    list-style: none;
+    @include rem(margin-bottom, 20 / 16);
+    min-height: 65px;
+    position: relative;
+
+    > a {
+      > .img {
+        display: block;
+        position: absolute;
+        width: 85px;
+      }
+
+      > .content {
+        display: inline-block;
+        @include rem(font-size, 13 / 16);
+        padding-left: 100px;
+
+        > h2 {
+          font-weight: 700;
+          margin-bottom: 0;
+        }
+
+        > span {
+          color: lighten($color-text-light, 20%);
+          font-style: italic;
+        }
+      }
+    }
+  }
+}

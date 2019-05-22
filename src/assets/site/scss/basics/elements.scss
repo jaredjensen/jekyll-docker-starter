@@ -1,0 +1,69 @@
+﻿@import '../mixins.scss';
+@import '../variables.scss';
+
+html {
+  font-size: $font-base-size;
+}
+
+body {
+  background: $color-body-background;
+  color: $color-text-light;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+p {
+  @include rem(margin-bottom, $paragraph-spacing);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  color: $color-text-dark;
+  font-family: 'Roboto Condensed';
+  @include rem(font-size, 32 / 16);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+
+  > a {
+    color: $color-text-light;
+  }
+}
+
+h1 {
+  margin: 0 0 2rem;
+}
+
+h2 {
+  @include rem(font-size, 25 / 16);
+}
+
+h3 {
+  @include rem(font-size, 16 / 16);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+a {
+  color: $color-text-light;
+  text-decoration: none;
+  transition: color $transition;
+
+  &:visited {
+    color: $color-text-light;
+  }
+
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: none;
+  }
+}

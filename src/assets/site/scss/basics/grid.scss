@@ -1,0 +1,58 @@
+﻿@import '../variables.scss';
+
+.container {
+  padding-left: $grid-spacing-mobile;
+  padding-right: $grid-spacing-mobile;
+}
+
+@media (min-width: $breakpoint-mobile) {
+  .container {
+    padding-left: $grid-spacing;
+    padding-right: $grid-spacing;
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .container {
+    width: 1360px;
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .col-xl-1 {
+    width: percentage(1 / 12);
+  }
+  .col-xl-2 {
+    width: percentage(2 / 12);
+  }
+  .col-xl-3 {
+    width: percentage(3 / 12);
+  }
+  .col-xl-4 {
+    width: percentage(4 / 12);
+  }
+  .col-xl-5 {
+    width: percentage(5 / 12);
+  }
+  .col-xl-6 {
+    width: percentage(6 / 12);
+  }
+  .col-xl-7 {
+    width: percentage(7 / 12);
+  }
+  .col-xl-8 {
+    width: percentage(8 / 12);
+  }
+  .col-xl-9 {
+    width: percentage(9 / 12);
+  }
+  .col-xl-10 {
+    width: percentage(10 / 12);
+  }
+  .col-xl-11 {
+    width: percentage(11 / 12);
+  }
+  .col-xl-12 {
+    width: percentage(12 / 12);
+  }
+}

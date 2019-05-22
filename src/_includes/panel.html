@@ -1,0 +1,22 @@
+<div class="panel {{ include.type }}">
+  {% if include.post.youtube_id %}
+  <div class="panel-banner video-container">
+    <iframe src="https://www.youtube.com/embed/{{ include.post.youtube_id }}?showinfo=0&t=0s" frameborder="0"
+      allowfullscreen></iframe>
+  </div>
+  {% else %}
+  {% if include.post.url %}<a href="{{ include.post.url }}">{% endif %}
+    <img class="panel-banner" src="{{ include.post.image_base }}-{{include.type}}.jpg" />
+    {% if include.post.url %}</a>{% endif %}
+  {% endif %}
+
+  {% if include.post.title %}
+  <h2>
+    {% if include.post.url %}<a href="{{ include.post.url }}">{% endif %}
+      {{ include.post.title }}
+      {% if include.post.url %}</a>{% endif %}
+  </h2>
+  {% endif %}
+
+  <p>{{ include.post.blurb }}</p>
+</div>

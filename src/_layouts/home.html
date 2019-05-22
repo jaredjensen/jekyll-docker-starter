@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+{% assign featured = site.posts | where:'featured','true' %} {% assign posts = site.posts | where:'layout','post' |
+where_exp:'item','item.featured!=true' | sort:'date' | reverse | slice:0,5 %} {% assign recentUfos = posts | slice:2,3
+%} {% assign sidebarPosts = posts | slice:0,2 %} {% assign moreUfos = site.posts | where:'layout','gallery' |
+sort:'date' | reverse | slice:0,3 %}
+
+<div class="container">
+  {% include hero.html image="/assets/site/img/hero.webp" text="UFOs are my heroes" %}
+
+  <div class="row">
+    <div class="col-md-8">
+      {% for post in featured %} {% include panel.html post=post type="featured" %} {% endfor %}
+
+      <div class="row">
+        <div class="col-md-6">
+          {% include post-list-panel.html posts=recentUfos title="Recent UFOs" %}
+        </div>
+        <div class="col-md-6">
+          {% include post-list-panel.html posts=moreUfos title="More UFOs" %}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      {% for post in sidebarPosts %} {% include panel.html post=post type="sidebar" %} {% endfor %}
+    </div>
+  </div>
+</div>

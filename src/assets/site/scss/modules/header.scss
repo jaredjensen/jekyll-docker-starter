@@ -1,0 +1,68 @@
+﻿@import '../mixins.scss';
+@import '../variables.scss';
+
+header {
+  background-color: $color-header-background;
+  margin-bottom: 0;
+
+  .navbar-brand {
+    padding-top: 5px;
+    width: 123px;
+  }
+
+  .navbar {
+    background-color: transparent !important;
+    border: none !important;
+    margin-bottom: 0 !important;
+
+    .nav {
+      > li {
+        a {
+          @include rem(font-size, 16 / 16);
+          text-transform: uppercase;
+
+          &:hover {
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-mobile) {
+  header {
+    padding: 15px 0;
+
+    .navbar-nav {
+      > li:last-child {
+        > a {
+          padding-right: 0;
+        }
+      }
+    }
+
+    .navbar-brand {
+      position: relative;
+      top: -10px;
+      width: 175px;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  header {
+    height: 112px;
+
+    .navbar-nav {
+      position: relative;
+      top: 44px;
+    }
+
+    .navbar-brand {
+      position: relative;
+      top: -10px;
+      width: 250px;
+    }
+  }
+}
